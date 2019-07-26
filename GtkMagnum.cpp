@@ -56,5 +56,8 @@ bool GtkMagnum::onRender(const Glib::RefPtr<Gdk::GLContext>& context[[maybe_unus
 
 void GtkMagnum::onUnrealize()
 {
+    throw_if_error();
+    make_current();
+
     _context.reset();
 }
